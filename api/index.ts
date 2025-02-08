@@ -1,8 +1,32 @@
-const express = require("express");
+import express, { type Request, type Response } from "express";
+import { config } from "dotenv";
+import cors from "cors";
+
+import { appErrorHandler } from "./error/errorHandler";
+import { apiRouter } from "./routes";
+
+config();
+
 const app = express();
+const port = process.env.PORT || 3000;
 
-app.get("/", (req, res) => res.send("Express on Vercel"));
+app.use(cors());
+app.use(express.json());
 
-// app.listen(3000, () => console.log("Server ready on port 3000."));
+app.get("/", async (_req: Request, res: Response) => {
+  res.send("Express Typescript on Vercel");
+});
 
-module.exports = app;
+apiRouter(app);
+
+app.use((_req, res) => {
+  res.status(404).send("<h1>Not found</h1>");
+});
+
+appErrorHandler(app);
+
+// const server = app.listen(port, () => {
+//   return console.log(`Server is listening on ${port}`);
+// });
+
+export default app;
