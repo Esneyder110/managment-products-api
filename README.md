@@ -34,6 +34,7 @@ Requires Node v20.
 
 1.  `npm install`
 2.  `npm install --global vercel@latest`
+4.  Create the .env based on .example.env
 3.  `vercel dev`
 
 `app.listen` fails on Vercel deployment.
