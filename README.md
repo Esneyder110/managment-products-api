@@ -10,6 +10,7 @@ Backend for Pillar Labs Technical Assessment
 - [How to Run App](#how-to-run-app)
 - [Next Steps](#next-steps)
 - [Tools Used](#tools-used)
+- [Time Spent](#time-spent)
 
 # Stack and Dependencies
 
@@ -51,3 +52,6 @@ Requires Node v20.
 - Mongo Atlas (database)
 - Vercel (hosting)
 - Codeium (autocomplete AI)
+
+## Time spent
+- 2 hours
